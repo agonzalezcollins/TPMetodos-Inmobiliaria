@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+ 		"classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+		
+<hibernate-mapping default-lazy="false">
+
+	<class name="tpmetodos.datos.entidades.EstadoDeInmueble" table="estado_de_inmueble">
+		<id name="id" column="id_estado_de_inmueble">
+			<generator class="native"></generator>
+		</id>
+		<property name="descripcion" column="descripcion" />
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+ 		"classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false">
+
+	<class name="tpmetodos.datos.entidades.Telefono" table="telefono">
+		<id name="id" column="id_telefono">
+			<generator class="native"></generator>
+		</id>
+		<property name="codigoDeArea" column="codigo_de_area" />
+		<property name="numero" column="numero" />
+		<many-to-one name="tipo" column="id_tipo_de_telefono"
+			not-null="true" />
+
+		<!-- <joined-subclass name="tpmetodos.datos.entidades.TelefonoDeCliente"
+			table="telefono_de_cliente">
+			<key column="id_telefono" />
+			<many-to-one name="cliente" column="id_cliente"
+			not-null="true" insert="false" update="false" />
+		</joined-subclass>
+		<joined-subclass name="tpmetodos.datos.entidades.TelefonoDePropietario"
+			table="telefono_de_propietario">
+			<key column="id_telefono" />
+			<many-to-one name="propietario" column="id_propietario"
+			not-null="true" insert="false" update="false" />
+		</joined-subclass> -->
+		<joined-subclass name="tpmetodos.datos.entidades.TelefonoDeVendedor"
+			table="telefono_de_vendedor">
+			<key column="id_telefono" />
+			<many-to-one name="vendedor" column="id_vendedor"
+			not-null="true" insert="false" update="false" />
+		</joined-subclass>
+	</class>
+
+</hibernate-mapping>

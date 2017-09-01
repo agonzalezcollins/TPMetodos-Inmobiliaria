@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+ 		"classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+		
+<hibernate-mapping default-lazy="false">
+
+	<class name="tpmetodos.datos.entidades.Inmueble" table="inmueble">
+		<id name="id" column="id_inmueble">
+			<generator class="native"></generator>
+		</id>
+		<property name="fechaDeAlta" column="fecha_de_alta" />
+		<property name="precioDeVenta" column = "precio_de_venta" />
+		<property name="longitudDeFrente" column="longitud_de_frente" />
+		<property name="longitudDeFondo" column="longitud_de_fondo" />
+		<property name="propiedadHorizontal" column="propiedad_horizontal" />
+		<property name="antiguedad" column="antiguedad" />
+		<property name="cantidadDeDormitorios" column="dormitorios" />
+		<property name="cantidadDeBanos" column="banos" />
+		<property name="garage" column="garage" />
+		<property name="patio" column="patio" />
+		<property name="piscina" column="piscina" />
+		<property name="aguaCorriente" column="agua_corriente" />
+		<property name="cloaca" column="cloacas" />
+		<property name="gasNatural" column="gas_natural" />
+		<property name="telefono" column="telefono" />
+		<property name="lavadero" column="lavadero" />
+		<property name="pavimento" column="pavimento" />
+		<property name="observaciones" column="observaciones" />
+		<!-- <many-to-one name="propietario" column="id_propietario" not-null="true" /> -->
+		<many-to-one name="estado" column="id_estado_de_inmueble" not-null="true" />
+		<many-to-one name="tipo" column="id_tipo_de_inmueble" not-null = "true" />
+		<many-to-one name="orientacion" column="id_orientacion" not-null = "true" />
+		<many-to-one name="direccion" column="id_direccion" />
+		<property name="superficie" column="superficie" />
+		<set name="fotos" cascade="all">
+	        <key column="id_inmueble" not-null = "true"/>
+	        <one-to-many class="tpmetodos.datos.entidades.FotoDeInmueble"/>
+	    </set>
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+ 		"classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+		
+<hibernate-mapping default-lazy="false">
+	
+	<class name="tpmetodos.datos.entidades.Calle" table="calle">
+		<id name="id" column="id_calle">
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="localidad" class="tpmetodos.datos.entidades.Localidad" column="id_localidad" not-null="true" lazy="false" cascade="all" />
+		<property name="nombre" column="nombre" not-null="true" />
+	</class>
+	
+</hibernate-mapping>

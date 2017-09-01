@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "classpath://org/hibernate/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://db4free.net:3306/tpmetodos</property>
+		<property name="connection.username">tpmetodos</property>
+		<property name="connection.password">ledesma</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">false</property>
+		
+		
+
+		<!-- Drop and re-create the database schema on startup -->
+		<!-- <property name="hbm2ddl.auto">create-drop</property> -->
+
+		<!-- Mapping files -->
+    	<mapping resource="tpmetodos/datos/mappings/Cliente.hbm.xml" />
+		<mapping resource="tpmetodos/datos/mappings/Calle.hbm.xml"/>
+		<mapping resource="tpmetodos/datos/mappings/Direccion.hbm.xml"/>
+ 		<mapping resource="tpmetodos/datos/mappings/EstadoDeInmueble.hbm.xml" />
+ 		<mapping resource="tpmetodos/datos/mappings/FotoDeInmueble.hbm.xml" /> 
+ 		<mapping resource="tpmetodos/datos/mappings/Inmueble.hbm.xml" /> 
+		<mapping resource="tpmetodos/datos/mappings/Localidad.hbm.xml"/>
+		<mapping resource="tpmetodos/datos/mappings/Orientacion.hbm.xml"/>
+		<mapping resource="tpmetodos/datos/mappings/Pais.hbm.xml" />
+	 	<mapping resource="tpmetodos/datos/mappings/Propietario.hbm.xml" /> 
+		<mapping resource="tpmetodos/datos/mappings/Provincia.hbm.xml" />
+<!-- 		<mapping resource="tpmetodos/datos/mappings/Reserva.hbm.xml" /> -->
+		<mapping resource="tpmetodos/datos/mappings/Telefono.hbm.xml" />
+ 		<mapping resource="tpmetodos/datos/mappings/TipoDeInmueble.hbm.xml" /> 
+		<mapping resource="tpmetodos/datos/mappings/TipoDeTelefono.hbm.xml"  />
+		<mapping resource="tpmetodos/datos/mappings/Vendedor.hbm.xml" />
+		<mapping resource="tpmetodos/datos/mappings/Venta.hbm.xml" />
+		
+	</session-factory>
+
+</hibernate-configuration>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+ 		"classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+		
+<hibernate-mapping default-lazy="false">
+
+	<class name="tpmetodos.datos.entidades.Vendedor" table="vendedor">
+		<id name="id" column="id_vendedor">
+			<generator class="native"></generator>
+		</id>
+		<property name="apellidos" column="apellidos" />
+		<property name="nombres" column="nombres" />
+		<property name="usuario" column="usuario" />
+		<property name="contrasena" column="contrasena" />
+		<property name="dni" column="dni" />
+		<property name="fechaDeNacimiento" column="fecha_de_nacimiento" />
+		<!-- <many-to-one name="direccion" column="id_direccion" not-null="true" cascade="all" /> -->
+		<set name="telefonos" cascade="all">
+	        <key column="id_vendedor" not-null="true"/>
+	        <one-to-many class="tpmetodos.datos.entidades.TelefonoDeVendedor"/>
+	    </set>
+	</class>
+	
+</hibernate-mapping>

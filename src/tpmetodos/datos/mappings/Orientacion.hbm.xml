@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+ 		"classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+		
+<hibernate-mapping default-lazy="false">
+
+	<class name="tpmetodos.datos.entidades.Orientacion" table="orientacion">
+		<id name="id" column="id_orientacion">
+			<generator class="native"></generator>
+		</id>
+		<property name="descripcion" column="nombre" />
+	</class>
+	
+</hibernate-mapping>

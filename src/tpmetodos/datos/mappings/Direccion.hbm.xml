@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+ 		"classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+		
+<hibernate-mapping default-lazy="false">
+
+	<class name="tpmetodos.datos.entidades.Direccion" table="direccion">
+		<id name="id" column="id_direccion">
+			<generator class="native"></generator>
+		</id>
+		<property name="numero" column="numero" />
+		<property name="piso" column="piso" />
+		<property name="departamento" column="departamento" />
+		<property name="barrio" column="barrio" />
+		<property name="calleAlternativa" column="calle_alternativa" />
+		<many-to-one name="localidad" column="id_localidad"  />
+		<many-to-one name="calle" column="id_calle" />
+	</class>
+	
+</hibernate-mapping>

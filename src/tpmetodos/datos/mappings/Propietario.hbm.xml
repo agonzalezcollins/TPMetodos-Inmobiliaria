@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+ 		"classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+		
+<hibernate-mapping default-lazy="false">
+
+	<class name="tpmetodos.datos.entidades.Propietario" table="propietario">
+		<id name="id" column="id_propietario">
+			<generator class="native"></generator>
+		</id>
+		<property name="apellidos" column="apellidos" />
+		<property name="nombres" column="nombres" />
+		<property name="dni" column="dni" />
+		<property name="fechaDeNacimiento" column="fecha_de_nacimiento" />
+		<many-to-one name="direccion" column="id_direccion" not-null="true" cascade="all" />
+		
+	</class>
+	
+</hibernate-mapping>

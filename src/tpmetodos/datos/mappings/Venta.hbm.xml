@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+ 		"classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+		
+<hibernate-mapping default-lazy="false">
+	
+	<class name="tpmetodos.datos.entidades.Venta" table="venta">
+		<id name="id" column="id_venta">
+			<generator class="native"></generator>
+		</id>
+		<property name="fechaDeVenta" column="fecha_de_venta" not-null="true" />
+		<property name="importe" column="importe" not-null="true" />
+		<many-to-one name="inmueble" class="tpmetodos.datos.entidades.Inmueble" column="id_inmueble" not-null="true" lazy="false" cascade="all" />
+		<many-to-one name="cliente" class="tpmetodos.datos.entidades.Cliente" column="id_cliente" not-null="true" lazy="false" cascade="all" />
+	</class>
+	
+</hibernate-mapping>

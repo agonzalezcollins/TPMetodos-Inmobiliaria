@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+ 		"classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+		
+<hibernate-mapping default-lazy="false">
+
+	<class name="tpmetodos.datos.entidades.FotoDeInmueble" table="foto_de_inmueble">
+		<id name="id" column="id_foto_de_inmueble">
+			<generator class="native"></generator>
+		</id>
+		<property name="descripcion" column="descripcion" />
+		<!--   <property name="foto" column="foto" />-->
+		<property name="path" column="path"/>
+		<many-to-one name="inmueble" column="id_inmueble" not-null ="true" insert="false" update="false" />
+	</class>
+	
+</hibernate-mapping>
